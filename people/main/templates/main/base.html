@@ -1,0 +1,20 @@
+<html>
+
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+    </head>
+
+    <body>
+        <div id="navigation">
+            <p>This is where the navigation goes</p>
+        </div>
+
+        {% block body %}
+        {% endblock %}
+
+        <div id="footer">
+            <p>Finally, the standard footer goes here</p>
+        </div>
+    </body>
+
+</html>

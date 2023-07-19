@@ -1,0 +1,26 @@
+<html>
+
+    <head>
+        <title>People I know</title>
+    </head>
+
+    <body>
+        <h1>Here are some people I know</h1>
+        <h2>From a template</h2>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>City</th>
+            </tr>
+
+            {% for name, city in people %}
+                <tr>
+                    <td>{{name}}</td>
+                    <td>{{city}}</td>
+                </tr>
+            {% endfor %}
+
+        </table>
+    </body>
+
+</html>
