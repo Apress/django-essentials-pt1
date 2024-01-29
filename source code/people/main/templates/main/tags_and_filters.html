@@ -1,0 +1,37 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Tags and Filters demonstration{% endblock %}
+
+{% block body %}
+    <h1>Tags and filters</h1>
+
+    <table border="1">
+        <tr>
+            <td>Name</td>
+            <td>Age group</td>
+            <td>Is family</td>
+            <td>Comments</td>
+        </tr>
+        {% for name, age, is_family, comment in people %}
+            <tr>
+                <td>{{ name }}</td>
+                <td>
+                    {% if age <= 12 %}
+                        Child
+                    {% elif age < 18 %}
+                        Teenager
+                    {% else %}
+                        Adult
+                    {% endif %}
+
+                    of {{ age }}
+                    year{{ age | pluralize }} old
+                </td>
+                <td>
+                    {{ is_family | yesno }}
+                </td>
+                <td>{{ comment | safe }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
